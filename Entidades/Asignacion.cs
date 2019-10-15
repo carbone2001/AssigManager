@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace Entidades
@@ -17,26 +16,26 @@ namespace Entidades
         public Hermano Hermano { get { return this.hermano; } }
         public EAsignacion Asignacion_ { get { return this.asignacion; } }
         public DateTime Semana { get { return this.semana; } }
-        public char Escuela { get { return this.escuela; } set { if (Char.ToUpper(value)  == 'A' || Char.ToUpper(value) == 'B') { this.escuela = Char.ToUpper(value); } } }
+        public char Escuela { get { return this.escuela; } set { if (Char.ToUpper(value) == 'A' || Char.ToUpper(value) == 'B') { this.escuela = Char.ToUpper(value); } } }
         public bool Rechazada { get { return this.rechazada; } set { this.rechazada = value; } }
         #endregion
         #region Propiedades
         public override string ToString()
         {
-            return String.Format("Hermano: {0} - {1}\nAsignacion: {2}\nEscuela: {3}\nSemana: {4} Rechazada: {5}", hermano.Apellido, hermano.Apellido, this.MostrarAsignacion(), this.Escuela,this.MostrarSemana(),this.MostrarRechazo());
-            
+            return String.Format("{0} - {1} | {2} | Escuela: {3} | Semana: {4} | Rechazada: {5}", hermano.Apellido, hermano.Nombre, this.MostrarAsignacion(), this.Escuela, this.MostrarSemana(), this.MostrarRechazo());
+
         }
         private string MostrarSemana()
         {
             StringBuilder m = new StringBuilder();
             DateTime aux = this.Semana;
             aux = aux.AddDays(7);
-            m.AppendFormat("{0}/{1} - {2}/{3}",this.Semana.Day,this.Semana.Month,aux.Day,aux.Month);
+            m.AppendFormat("{0}/{1} - {2}/{3}", this.Semana.Day, this.Semana.Month, aux.Day, aux.Month);
             return m.ToString();
         }
         private string MostrarAsignacion()
         {
-            switch(this.Asignacion_)
+            switch (this.Asignacion_)
             {
                 case EAsignacion.Lectura:
                     return "Lectura";
@@ -58,7 +57,7 @@ namespace Entidades
                     return "Asignacion No Definida";
             }
         }
-        public Asignacion(Hermano hermano,EAsignacion asignacion,DateTime semana,char escuela)
+        public Asignacion(Hermano hermano, EAsignacion asignacion, DateTime semana, char escuela)
         {
             this.Escuela = escuela;
             this.asignacion = asignacion;
@@ -72,7 +71,7 @@ namespace Entidades
         }
         public static bool operator ==(Asignacion a, Asignacion b)
         {
-            if (a.Hermano == b.Hermano && a.Semana == b.Semana)
+            if (a.Hermano == b.Hermano && a.Semana.Year == b.Semana.Year && a.Semana.Month == b.Semana.Month && a.Semana.Day == b.Semana.Day)
                 return true;
             return false;
         }
@@ -81,6 +80,18 @@ namespace Entidades
             if (Rechazada == true)
                 return "SI";
             return "NO";
+        }
+        public static int OrdenarPorFechaAsc(Asignacion a, Asignacion b)
+        {
+            if (a.Semana > b.Semana)
+                return 1;
+            if (a.Semana < b.Semana)
+                return -1;
+            return 0;
+        }
+        public static int OrdenarPorFechaDesc(Asignacion a, Asignacion b)
+        {
+            return OrdenarPorFechaAsc(a, b) * (-1);
         }
         #endregion
 

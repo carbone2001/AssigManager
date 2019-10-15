@@ -38,6 +38,9 @@
             this.hermanientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grbAsignacion = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.cmbAño = new System.Windows.Forms.ComboBox();
             this.cmbMes = new System.Windows.Forms.ComboBox();
             this.cmbOrdenamientoAsignaciones = new System.Windows.Forms.ComboBox();
@@ -54,8 +57,6 @@
             this.btnBuscarHermano = new System.Windows.Forms.Button();
             this.btnEditarInfoHermano = new System.Windows.Forms.Button();
             this.btnAgregarHermano = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.lblNombreCongregacion = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.grbAsignacion.SuspendLayout();
             this.grbHermanos.SuspendLayout();
@@ -70,7 +71,7 @@
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(810, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(896, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -131,6 +132,9 @@
             // 
             // grbAsignacion
             // 
+            this.grbAsignacion.Controls.Add(this.label3);
+            this.grbAsignacion.Controls.Add(this.label2);
+            this.grbAsignacion.Controls.Add(this.label1);
             this.grbAsignacion.Controls.Add(this.cmbAño);
             this.grbAsignacion.Controls.Add(this.cmbMes);
             this.grbAsignacion.Controls.Add(this.cmbOrdenamientoAsignaciones);
@@ -141,44 +145,74 @@
             this.grbAsignacion.Controls.Add(this.btnAgregarAsignacion);
             this.grbAsignacion.Location = new System.Drawing.Point(12, 27);
             this.grbAsignacion.Name = "grbAsignacion";
-            this.grbAsignacion.Size = new System.Drawing.Size(534, 229);
+            this.grbAsignacion.Size = new System.Drawing.Size(872, 229);
             this.grbAsignacion.TabIndex = 1;
             this.grbAsignacion.TabStop = false;
             this.grbAsignacion.Text = "Asignacion";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(725, 101);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Año";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(725, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(27, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Mes";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(725, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Ordenar Por";
             // 
             // cmbAño
             // 
             this.cmbAño.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAño.FormattingEnabled = true;
-            this.cmbAño.Location = new System.Drawing.Point(427, 200);
+            this.cmbAño.Location = new System.Drawing.Point(728, 117);
             this.cmbAño.Name = "cmbAño";
-            this.cmbAño.Size = new System.Drawing.Size(101, 21);
+            this.cmbAño.Size = new System.Drawing.Size(138, 21);
             this.cmbAño.TabIndex = 7;
+            this.cmbAño.SelectedIndexChanged += new System.EventHandler(this.cmbAño_SelectedIndexChanged);
             // 
             // cmbMes
             // 
             this.cmbMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMes.FormattingEnabled = true;
-            this.cmbMes.Location = new System.Drawing.Point(281, 200);
+            this.cmbMes.Location = new System.Drawing.Point(728, 77);
             this.cmbMes.Name = "cmbMes";
-            this.cmbMes.Size = new System.Drawing.Size(140, 21);
+            this.cmbMes.Size = new System.Drawing.Size(138, 21);
             this.cmbMes.TabIndex = 6;
+            this.cmbMes.SelectedIndexChanged += new System.EventHandler(this.cmbMes_SelectedIndexChanged);
             // 
             // cmbOrdenamientoAsignaciones
             // 
             this.cmbOrdenamientoAsignaciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOrdenamientoAsignaciones.FormattingEnabled = true;
-            this.cmbOrdenamientoAsignaciones.Location = new System.Drawing.Point(135, 200);
+            this.cmbOrdenamientoAsignaciones.Location = new System.Drawing.Point(728, 37);
             this.cmbOrdenamientoAsignaciones.Name = "cmbOrdenamientoAsignaciones";
-            this.cmbOrdenamientoAsignaciones.Size = new System.Drawing.Size(140, 21);
+            this.cmbOrdenamientoAsignaciones.Size = new System.Drawing.Size(138, 21);
             this.cmbOrdenamientoAsignaciones.TabIndex = 5;
+            this.cmbOrdenamientoAsignaciones.SelectedIndexChanged += new System.EventHandler(this.cmbOrdenamientoAsignaciones_SelectedIndexChanged);
             // 
             // lsbAsignaciones
             // 
             this.lsbAsignaciones.FormattingEnabled = true;
-            this.lsbAsignaciones.Location = new System.Drawing.Point(135, 22);
+            this.lsbAsignaciones.Location = new System.Drawing.Point(135, 21);
             this.lsbAsignaciones.Name = "lsbAsignaciones";
-            this.lsbAsignaciones.Size = new System.Drawing.Size(393, 173);
+            this.lsbAsignaciones.Size = new System.Drawing.Size(584, 199);
             this.lsbAsignaciones.TabIndex = 4;
             // 
             // btnEliminarAsignaciones
@@ -189,24 +223,27 @@
             this.btnEliminarAsignaciones.TabIndex = 3;
             this.btnEliminarAsignaciones.Text = "Eliminar Asignación";
             this.btnEliminarAsignaciones.UseVisualStyleBackColor = true;
+            this.btnEliminarAsignaciones.Click += new System.EventHandler(this.btnEliminarAsignaciones_Click);
             // 
             // btnEditarAsignaciones
             // 
-            this.btnEditarAsignaciones.Location = new System.Drawing.Point(6, 123);
+            this.btnEditarAsignaciones.Location = new System.Drawing.Point(6, 71);
             this.btnEditarAsignaciones.Name = "btnEditarAsignaciones";
             this.btnEditarAsignaciones.Size = new System.Drawing.Size(123, 46);
             this.btnEditarAsignaciones.TabIndex = 2;
             this.btnEditarAsignaciones.Text = "Editar Asignación";
             this.btnEditarAsignaciones.UseVisualStyleBackColor = true;
+            this.btnEditarAsignaciones.Click += new System.EventHandler(this.btnEditarAsignaciones_Click);
             // 
             // btnBuscarAsignaciones
             // 
-            this.btnBuscarAsignaciones.Location = new System.Drawing.Point(6, 71);
+            this.btnBuscarAsignaciones.Location = new System.Drawing.Point(6, 123);
             this.btnBuscarAsignaciones.Name = "btnBuscarAsignaciones";
             this.btnBuscarAsignaciones.Size = new System.Drawing.Size(123, 46);
             this.btnBuscarAsignaciones.TabIndex = 1;
             this.btnBuscarAsignaciones.Text = "Buscar Asignación";
             this.btnBuscarAsignaciones.UseVisualStyleBackColor = true;
+            this.btnBuscarAsignaciones.Click += new System.EventHandler(this.btnBuscarAsignaciones_Click);
             // 
             // btnAgregarAsignacion
             // 
@@ -216,6 +253,7 @@
             this.btnAgregarAsignacion.TabIndex = 0;
             this.btnAgregarAsignacion.Text = "Crear  Asignación";
             this.btnAgregarAsignacion.UseVisualStyleBackColor = true;
+            this.btnAgregarAsignacion.Click += new System.EventHandler(this.btnAgregarAsignacion_Click);
             // 
             // grbHermanos
             // 
@@ -227,7 +265,7 @@
             this.grbHermanos.Controls.Add(this.btnAgregarHermano);
             this.grbHermanos.Location = new System.Drawing.Point(12, 262);
             this.grbHermanos.Name = "grbHermanos";
-            this.grbHermanos.Size = new System.Drawing.Size(786, 229);
+            this.grbHermanos.Size = new System.Drawing.Size(866, 229);
             this.grbHermanos.TabIndex = 2;
             this.grbHermanos.TabStop = false;
             this.grbHermanos.Text = "Hermanos";
@@ -240,13 +278,14 @@
             this.cmbOrdenamientoHermanos.Name = "cmbOrdenamientoHermanos";
             this.cmbOrdenamientoHermanos.Size = new System.Drawing.Size(140, 21);
             this.cmbOrdenamientoHermanos.TabIndex = 6;
+            this.cmbOrdenamientoHermanos.SelectedIndexChanged += new System.EventHandler(this.cmbOrdenamientoHermanos_SelectedIndexChanged);
             // 
             // lsbHermanos
             // 
             this.lsbHermanos.FormattingEnabled = true;
             this.lsbHermanos.Location = new System.Drawing.Point(135, 22);
             this.lsbHermanos.Name = "lsbHermanos";
-            this.lsbHermanos.Size = new System.Drawing.Size(645, 173);
+            this.lsbHermanos.Size = new System.Drawing.Size(725, 173);
             this.lsbHermanos.TabIndex = 5;
             // 
             // btnEliminarHermano
@@ -288,28 +327,11 @@
             this.btnAgregarHermano.UseVisualStyleBackColor = true;
             this.btnAgregarHermano.Click += new System.EventHandler(this.btnAgregarHermano_Click);
             // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(552, 49);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 3;
-            // 
-            // lblNombreCongregacion
-            // 
-            this.lblNombreCongregacion.AutoSize = true;
-            this.lblNombreCongregacion.Location = new System.Drawing.Point(552, 27);
-            this.lblNombreCongregacion.Name = "lblNombreCongregacion";
-            this.lblNombreCongregacion.Size = new System.Drawing.Size(104, 13);
-            this.lblNombreCongregacion.TabIndex = 4;
-            this.lblNombreCongregacion.Text = "NombreConregacion";
-            // 
             // FormularioPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 501);
-            this.Controls.Add(this.lblNombreCongregacion);
-            this.Controls.Add(this.monthCalendar1);
+            this.ClientSize = new System.Drawing.Size(896, 501);
             this.Controls.Add(this.grbHermanos);
             this.Controls.Add(this.grbAsignacion);
             this.Controls.Add(this.menuStrip1);
@@ -319,6 +341,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grbAsignacion.ResumeLayout(false);
+            this.grbAsignacion.PerformLayout();
             this.grbHermanos.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -353,8 +376,9 @@
         private System.Windows.Forms.ListBox lsbHermanos;
         private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem guardarCambiosToolStripMenuItem;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.Label lblNombreCongregacion;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

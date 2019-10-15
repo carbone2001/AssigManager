@@ -109,3 +109,4 @@ C:\Users\Lucas\Escritorio En SSD\AssigManager\GUIAssigManager\obj\Debug\GUIAssig
 C:\Users\Lucas\Escritorio En SSD\AssigManager\GUIAssigManager\obj\Debug\GUIAssigManager.FrmEscuela.resources
 C:\Users\Lucas\Escritorio En SSD\AssigManager\GUIAssigManager\obj\Debug\GUIAssigManager.csproj.CopyComplete
 C:\Users\Lucas\Escritorio En SSD\AssigManager\GUIAssigManager\obj\Debug\GUIAssigManager.FrmHermano.resources
+C:\Users\Lucas\Escritorio En SSD\AssigManager\GUIAssigManager\obj\Debug\GUIAssigManager.FrmAsignacion.resources

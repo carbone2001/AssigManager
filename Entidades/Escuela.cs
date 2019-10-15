@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Entidades
 {
@@ -35,18 +33,18 @@ namespace Entidades
         {
             return !(e == h);
         }
-        public static bool operator ==(Escuela e,Hermano h)
+        public static bool operator ==(Escuela e, Hermano h)
         {
-            foreach(Hermano x in e.ListaHermanos)
+            foreach (Hermano x in e.ListaHermanos)
             {
                 if (x == h)
                     return true;
             }
             return false;
         }
-        public static Escuela operator +(Escuela e,Hermano h)
+        public static Escuela operator +(Escuela e, Hermano h)
         {
-            if(e!=h)
+            if (e != h)
             {
                 e.ListaHermanos.Add(h);
             }
@@ -92,6 +90,9 @@ namespace Entidades
             }
             return e;
         }
+
+
+
         public Escuela()
         {
             this.listaAsignaciones = new List<Asignacion>();
@@ -99,7 +100,7 @@ namespace Entidades
             this.NombreCongregacion = "Nombre no definido";
 
         }
-        public Escuela(string nombre):this()
+        public Escuela(string nombre) : this()
         {
             this.NombreCongregacion = nombre;
         }

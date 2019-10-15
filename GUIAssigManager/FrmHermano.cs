@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 
@@ -29,8 +22,9 @@ namespace GUIAssigManager
             this.nudEdad.Value = (Decimal)this.hermano.Edad;
             this.ckbBautizado.Checked = this.hermano.Bautizado;
             this.cmbPrivilegio.SelectedItem = this.hermano.Privilegio;
+            this.ckbHabilitado.Checked = true;
         }
-        public FrmHermano(Hermano h):this()
+        public FrmHermano(Hermano h) : this()
         {
             this.txtApellido.Text = h.Apellido;
             this.txtNombre.Text = h.Nombre;
@@ -42,7 +36,7 @@ namespace GUIAssigManager
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            this.hermano = new Hermano(this.txtApellido.Text,this.txtNombre.Text,(int)this.nudEdad.Value,this.txtNumeroTelefono.Text,this.ckbBautizado.Checked,true,(EPrivilegio)this.cmbPrivilegio.SelectedItem);
+            this.hermano = new Hermano(this.txtApellido.Text, this.txtNombre.Text, (int)this.nudEdad.Value, this.txtNumeroTelefono.Text, this.ckbBautizado.Checked, this.ckbHabilitado.Checked, (EPrivilegio)this.cmbPrivilegio.SelectedItem);
             this.DialogResult = DialogResult.OK;
         }
 

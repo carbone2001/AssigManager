@@ -41,6 +41,7 @@
             this.txtNumeroTelefono = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.ckbHabilitado = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudEdad)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(100, 42);
             this.btnAceptar.TabIndex = 7;
-            this.btnAceptar.Text = "Agregar Hermano";
+            this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
@@ -156,12 +157,23 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // ckbHabilitado
+            // 
+            this.ckbHabilitado.AutoSize = true;
+            this.ckbHabilitado.Location = new System.Drawing.Point(244, 126);
+            this.ckbHabilitado.Name = "ckbHabilitado";
+            this.ckbHabilitado.Size = new System.Drawing.Size(73, 17);
+            this.ckbHabilitado.TabIndex = 13;
+            this.ckbHabilitado.Text = "Habilitado";
+            this.ckbHabilitado.UseVisualStyleBackColor = true;
+            // 
             // FrmHermano
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(329, 234);
             this.ControlBox = false;
+            this.Controls.Add(this.ckbHabilitado);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtNumeroTelefono);
             this.Controls.Add(this.label5);
@@ -198,5 +210,6 @@
         private System.Windows.Forms.TextBox txtNumeroTelefono;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.CheckBox ckbHabilitado;
     }
 }

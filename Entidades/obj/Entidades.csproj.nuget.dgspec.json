@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Escritorio\\AssigManager\\Entidades\\Entidades.csproj": {}
+    "C:\\Users\\Lucas\\Escritorio En SSD\\AssigManager\\Entidades\\Entidades.csproj": {}
   },
   "projects": {
-    "D:\\Escritorio\\AssigManager\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\Lucas\\Escritorio En SSD\\AssigManager\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Escritorio\\AssigManager\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\Lucas\\Escritorio En SSD\\AssigManager\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "D:\\Escritorio\\AssigManager\\Entidades\\Entidades.csproj",
+        "projectPath": "C:\\Users\\Lucas\\Escritorio En SSD\\AssigManager\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
-        "outputPath": "D:\\Escritorio\\AssigManager\\Entidades\\obj\\",
+        "outputPath": "C:\\Users\\Lucas\\Escritorio En SSD\\AssigManager\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
