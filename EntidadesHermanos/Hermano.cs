@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Entidades
+namespace Hermanos
 {
     public class Hermano
     {
@@ -31,6 +31,10 @@ namespace Entidades
         public static implicit operator string(Hermano h)
         {
             return String.Format("{0} - {1}", h.Apellido, h.Nombre);
+        }
+        public string MostrarNombreApellido()
+        {
+            return String.Format("{0} - {1}", this.Apellido, this.Nombre);
         }
         public static bool operator !=(Hermano a, Hermano b)
         {
@@ -94,7 +98,14 @@ namespace Entidades
             return 0;
         }*/
         #endregion
-
-
+    }
+    public enum EPrivilegio
+    {
+        Anciano,
+        Siervo_Ministerial,
+        Precursor_Especial,
+        Precursor_Regular,
+        Precursor_Auxiliar,
+        Publicador,
     }
 }

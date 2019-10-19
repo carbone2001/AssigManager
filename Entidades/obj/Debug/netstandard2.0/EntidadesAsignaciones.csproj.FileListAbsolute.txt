@@ -1,0 +1,11 @@
+C:\Users\Lucas\Escritorio En SSD\AssigManager\Entidades\bin\Debug\netstandard2.0\EntidadesAsignaciones.deps.json
+C:\Users\Lucas\Escritorio En SSD\AssigManager\Entidades\bin\Debug\netstandard2.0\EntidadesAsignaciones.dll
+C:\Users\Lucas\Escritorio En SSD\AssigManager\Entidades\bin\Debug\netstandard2.0\EntidadesAsignaciones.pdb
+C:\Users\Lucas\Escritorio En SSD\AssigManager\Entidades\obj\Debug\netstandard2.0\EntidadesAsignaciones.csprojAssemblyReference.cache
+C:\Users\Lucas\Escritorio En SSD\AssigManager\Entidades\obj\Debug\netstandard2.0\EntidadesAsignaciones.AssemblyInfoInputs.cache
+C:\Users\Lucas\Escritorio En SSD\AssigManager\Entidades\obj\Debug\netstandard2.0\EntidadesAsignaciones.AssemblyInfo.cs
+C:\Users\Lucas\Escritorio En SSD\AssigManager\Entidades\obj\Debug\netstandard2.0\EntidadesAsignaciones.dll
+C:\Users\Lucas\Escritorio En SSD\AssigManager\Entidades\obj\Debug\netstandard2.0\EntidadesAsignaciones.pdb
+C:\Users\Lucas\Escritorio En SSD\AssigManager\Entidades\bin\Debug\netstandard2.0\EntidadesHermanos.dll
+C:\Users\Lucas\Escritorio En SSD\AssigManager\Entidades\bin\Debug\netstandard2.0\EntidadesHermanos.pdb
+C:\Users\Lucas\Escritorio En SSD\AssigManager\Entidades\obj\Debug\netstandard2.0\EntidadesAsignaciones.csproj.CopyComplete

@@ -1,0 +1,8 @@
+C:\Users\Lucas\Escritorio En SSD\AssigManager\EntidadesHermanos\bin\Debug\netstandard2.0\EntidadesHermanos.deps.json
+C:\Users\Lucas\Escritorio En SSD\AssigManager\EntidadesHermanos\bin\Debug\netstandard2.0\EntidadesHermanos.dll
+C:\Users\Lucas\Escritorio En SSD\AssigManager\EntidadesHermanos\bin\Debug\netstandard2.0\EntidadesHermanos.pdb
+C:\Users\Lucas\Escritorio En SSD\AssigManager\EntidadesHermanos\obj\Debug\netstandard2.0\EntidadesHermanos.AssemblyInfoInputs.cache
+C:\Users\Lucas\Escritorio En SSD\AssigManager\EntidadesHermanos\obj\Debug\netstandard2.0\EntidadesHermanos.AssemblyInfo.cs
+C:\Users\Lucas\Escritorio En SSD\AssigManager\EntidadesHermanos\obj\Debug\netstandard2.0\EntidadesHermanos.dll
+C:\Users\Lucas\Escritorio En SSD\AssigManager\EntidadesHermanos\obj\Debug\netstandard2.0\EntidadesHermanos.pdb
+C:\Users\Lucas\Escritorio En SSD\AssigManager\EntidadesHermanos\obj\Debug\netstandard2.0\EntidadesHermanos.csprojAssemblyReference.cache

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-
+using Hermanos;
 namespace Entidades
 {
     public class Escuela
@@ -60,7 +60,13 @@ namespace Entidades
         }
 
         ///Asignaciones
-
+        public static int operator |(Escuela a, Asignacion b)
+        {
+            foreach(Asignacion x in a.ListaAsignaciones)
+            {
+            }
+            return 0;
+        }
         public static bool operator !=(Escuela e, Asignacion a)
         {
             return !(e == a);

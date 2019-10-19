@@ -1,0 +1,2 @@
+C:\Users\Lucas\Escritorio En SSD\AssigManager\EntidadesInformes\obj\Debug\netstandard2.0\EntidadesInformes.AssemblyInfoInputs.cache
+C:\Users\Lucas\Escritorio En SSD\AssigManager\EntidadesInformes\obj\Debug\netstandard2.0\EntidadesInformes.AssemblyInfo.cs

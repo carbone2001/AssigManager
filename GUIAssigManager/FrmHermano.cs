@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Entidades;
-
+using Hermanos;
 namespace GUIAssigManager
 {
     public partial class FrmHermano : Form

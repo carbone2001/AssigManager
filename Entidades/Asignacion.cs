@@ -1,19 +1,23 @@
 ﻿using System;
 using System.Text;
-
+using Hermanos;
 namespace Entidades
 {
     public class Asignacion
     {
         #region Atributos
         private Hermano hermano;
+        private Hermano ayudante;
         private EAsignacion asignacion;
+        private int aspectoOratoria;
         private DateTime semana;
         private bool rechazada;
         private char escuela;
         #endregion
         #region Propiedades
         public Hermano Hermano { get { return this.hermano; } }
+        public Hermano Ayudante { get { return this.ayudante; } }
+        public int AspectoOratoria { get { return this.aspectoOratoria; } }
         public EAsignacion Asignacion_ { get { return this.asignacion; } }
         public DateTime Semana { get { return this.semana; } }
         public char Escuela { get { return this.escuela; } set { if (Char.ToUpper(value) == 'A' || Char.ToUpper(value) == 'B') { this.escuela = Char.ToUpper(value); } } }
@@ -22,7 +26,16 @@ namespace Entidades
         #region Propiedades
         public override string ToString()
         {
-            return String.Format("{0} - {1} | {2} | Escuela: {3} | Semana: {4} | Rechazada: {5}", hermano.Apellido, hermano.Nombre, this.MostrarAsignacion(), this.Escuela, this.MostrarSemana(), this.MostrarRechazo());
+            string ayudante;
+            if (Object.Equals(this.Ayudante, null))
+            {
+                ayudante = "Sin ayudante";
+            }
+            else
+            {
+                ayudante = String.Format("{0} - {1}",this.Ayudante.Apellido, this.Ayudante.Nombre);
+            }
+            return String.Format("{0} - {1}  | Ayudante: {2} | {3} | Aspecto: {4} | Escuela: {5} | Semana: {6} | Rechazada: {7}", hermano.Apellido, hermano.Nombre,ayudante,this.MostrarAsignacion(),this.AspectoOratoria,this.Escuela, this.MostrarSemana(), this.MostrarRechazo());
 
         }
         private string MostrarSemana()
@@ -57,10 +70,12 @@ namespace Entidades
                     return "Asignacion No Definida";
             }
         }
-        public Asignacion(Hermano hermano, EAsignacion asignacion, DateTime semana, char escuela)
+        public Asignacion(Hermano hermano, Hermano ayudante, EAsignacion asignacion, int aspectoOratoria, DateTime semana, char escuela)
         {
             this.Escuela = escuela;
+            this.ayudante = ayudante;
             this.asignacion = asignacion;
+            this.aspectoOratoria = aspectoOratoria;
             this.semana = semana;
             this.hermano = hermano;
             this.Rechazada = false;
@@ -93,6 +108,7 @@ namespace Entidades
         {
             return OrdenarPorFechaAsc(a, b) * (-1);
         }
+        
         #endregion
 
     }

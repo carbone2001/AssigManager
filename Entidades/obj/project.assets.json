@@ -25,6 +25,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "EntidadesHermanos/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/EntidadesHermanos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EntidadesHermanos.dll": {}
+        }
       }
     }
   },
@@ -172,10 +182,16 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "EntidadesHermanos/1.0.0": {
+      "type": "project",
+      "path": "../EntidadesHermanos/EntidadesHermanos.csproj",
+      "msbuildProject": "../EntidadesHermanos/EntidadesHermanos.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "EntidadesHermanos >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -185,9 +201,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lucas\\Escritorio En SSD\\AssigManager\\Entidades\\Entidades.csproj",
-      "projectName": "Entidades",
-      "projectPath": "C:\\Users\\Lucas\\Escritorio En SSD\\AssigManager\\Entidades\\Entidades.csproj",
+      "projectUniqueName": "C:\\Users\\Lucas\\Escritorio En SSD\\AssigManager\\Entidades\\EntidadesAsignaciones.csproj",
+      "projectName": "EntidadesAsignaciones",
+      "projectPath": "C:\\Users\\Lucas\\Escritorio En SSD\\AssigManager\\Entidades\\EntidadesAsignaciones.csproj",
       "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Lucas\\Escritorio En SSD\\AssigManager\\Entidades\\obj\\",
       "projectStyle": "PackageReference",
@@ -204,7 +220,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Lucas\\Escritorio En SSD\\AssigManager\\EntidadesHermanos\\EntidadesHermanos.csproj": {
+              "projectPath": "C:\\Users\\Lucas\\Escritorio En SSD\\AssigManager\\EntidadesHermanos\\EntidadesHermanos.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

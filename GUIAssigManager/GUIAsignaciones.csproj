@@ -70,6 +70,12 @@
     <Compile Include="FrmHermano.Designer.cs">
       <DependentUpon>FrmHermano.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHermanoEspecifico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHermanoEspecifico.Designer.cs">
+      <DependentUpon>frmHermanoEspecifico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ordenadmiento.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHermano.resx">
       <DependentUpon>FrmHermano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHermanoEspecifico.resx">
+      <DependentUpon>frmHermanoEspecifico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -108,9 +117,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Entidades\Entidades.csproj">
+    <ProjectReference Include="..\EntidadesHermanos\EntidadesHermanos.csproj">
+      <Project>{30f99fca-4df7-42e5-a8c5-e7ce7266549c}</Project>
+      <Name>EntidadesHermanos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\EntidadesAsignaciones.csproj">
       <Project>{e511990a-9b69-40e5-af72-6a4c0aada5e6}</Project>
-      <Name>Entidades</Name>
+      <Name>EntidadesAsignaciones</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

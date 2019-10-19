@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using Entidades;
+using Hermanos;
 namespace GUIAssigManager
 {
     public partial class FormularioPrincipal : Form
@@ -14,6 +16,7 @@ namespace GUIAssigManager
             this.grbAsignacion.Enabled = false;
             this.grbHermanos.Enabled = false;
             this.Text = "AssigManager (Congregacion No Definida)";
+            this.hermanientasToolStripMenuItem.Enabled = false;
             foreach (ETipoOrdenamiento p in ETipoOrdenamiento.GetValues(typeof(ETipoOrdenamiento)))
             {
                 this.cmbOrdenamientoHermanos.Items.Add(p);
@@ -46,6 +49,7 @@ namespace GUIAssigManager
                 this.grbAsignacion.Enabled = true;
                 this.grbHermanos.Enabled = true;
                 this.escuelaToolStripMenuItem.Enabled = false;
+                this.hermanientasToolStripMenuItem.Enabled = true;
             }
         }
 
@@ -92,12 +96,12 @@ namespace GUIAssigManager
 
             foreach (Hermano x in this.escuela.ListaHermanos)
             {
-                this.lsbHermanos.Items.Add(x.ToString());
+                this.lsbHermanos.Items.Add(x);
             }
             foreach (Asignacion x in this.escuela.ListaAsignaciones)
             {
                 if (x.Semana.Month == this.cmbMes.SelectedIndex + 1 && x.Semana.Year == (int)this.cmbAño.SelectedItem)
-                    this.lsbAsignaciones.Items.Add(x.ToString());
+                    this.lsbAsignaciones.Items.Add(x);
             }
         }
 
@@ -105,7 +109,7 @@ namespace GUIAssigManager
         {
             if (!Object.Equals(this.lsbHermanos.SelectedItem, null))
             {
-                FrmHermano formHermano = new FrmHermano(this.escuela.ListaHermanos[this.lsbHermanos.SelectedIndex]);
+                FrmHermano formHermano = new FrmHermano((Hermano)this.escuela.ListaHermanos[this.lsbHermanos.SelectedIndex]);
                 formHermano.ShowDialog();
                 if (formHermano.DialogResult == DialogResult.OK)
                     this.escuela.ListaHermanos[this.lsbHermanos.SelectedIndex] = formHermano.hermano;
@@ -143,20 +147,18 @@ namespace GUIAssigManager
                 }
             }
             this.ActualizarListBox();
-
-
         }
 
         private void btnEditarAsignaciones_Click(object sender, EventArgs e)
         {
             if (!Object.Equals(this.lsbAsignaciones.SelectedItem, null))
             {
-                FrmAsignacion formAsignacion = new FrmAsignacion(this.escuela.ListaAsignaciones[this.lsbAsignaciones.SelectedIndex], this.escuela);
+                FrmAsignacion formAsignacion = new FrmAsignacion((Asignacion)this.lsbAsignaciones.SelectedItem, this.escuela);
                 if (formAsignacion.DialogResult != DialogResult.Cancel)
                 {
                     formAsignacion.ShowDialog();
                     if (formAsignacion.DialogResult == DialogResult.OK)
-                        this.escuela.ListaAsignaciones[this.lsbAsignaciones.SelectedIndex] = formAsignacion.asignacion;
+                        this.escuela.ListaAsignaciones[this.escuela.ListaAsignaciones.IndexOf((Asignacion)this.lsbAsignaciones.SelectedItem)] = formAsignacion.asignacion;
                 }
             }
             this.ActualizarListBox();
@@ -193,26 +195,106 @@ namespace GUIAssigManager
         private void btnBuscarAsignaciones_Click(object sender, EventArgs e)
         {
             FrmAsignacion formAsignacion = new FrmAsignacion(this.escuela);
-
-
             if (!(formAsignacion.DialogResult == DialogResult.Cancel))
             {
                 formAsignacion.ShowDialog();
                 if (formAsignacion.DialogResult == DialogResult.OK)
+                {
                     if (this.escuela == formAsignacion.asignacion)
                     {
                         this.cmbMes.SelectedIndex = formAsignacion.asignacion.Semana.Month - 1;
                         this.cmbAño.SelectedItem = formAsignacion.asignacion.Semana.Year;
-                        this.cmbOrdenamientoAsignaciones.SelectedItem = formAsignacion.asignacion;
+                        this.lsbAsignaciones.SelectedItem = formAsignacion.asignacion.ToString();
                     }
                     else
                     {
-                        MessageBox.Show("No se ha encontrado la asignacion.", "Buscar Asignacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        MessageBox.Show("No se ha encontrado la asignacion.", "Buscar Asignacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+        }
+
+        private void btnBuscarHermano_Click(object sender, EventArgs e)
+        {
+            FrmHermano frmHermano = new FrmHermano();
+            if (!(frmHermano.DialogResult == DialogResult.Cancel))
+            {
+                frmHermano.ShowDialog();
+                if (frmHermano.DialogResult == DialogResult.OK)
+                    if (this.escuela == frmHermano.hermano)
+                    {
+                        this.lsbHermanos.SelectedItem = frmHermano.hermano.ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha encontrado al hermano.", "Buscar Hermano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
             }
+        }
 
+        private void cambiarNombreDeCongregacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEscuela formEscuela = new FrmEscuela();
+            formEscuela.ShowDialog();
+            if (formEscuela.DialogResult == DialogResult.OK)
+            {
+                this.escuela = formEscuela.escuela;
+                this.Text = String.Format("AssigManager ({0})", this.escuela.NombreCongregacion);
+            }
+        }
 
+        private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fb = new OpenFileDialog();
 
+            DialogResult result = fb.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    MessageBox.Show("FUNCION EN ESTADO DE PRUBA!", "FUNCION EN ESTADO DE PRUBA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception c)
+                {
+                    MessageBox.Show(c.Message);
+                }
+            }
+        }
+
+        private void guardarComoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fb = new FolderBrowserDialog();
+            DialogResult result = fb.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    using (StreamWriter archivoAGuardar = new StreamWriter(fb.SelectedPath + "\\DATA_ASSIGMANAGER.txt"))
+                    {
+                        foreach (Asignacion x in this.escuela.ListaAsignaciones)
+                        {
+                            archivoAGuardar.WriteLine(x.ToString());
+                        }
+                        MessageBox.Show("El archivo se ha guardado con exito!", "Archivo Guardado", MessageBoxButtons.OK);
+                    }
+                }
+                catch (Exception c)
+                {
+                    MessageBox.Show(c.Message);
+                }
+            }
+        }
+
+        private void btnVolverAHoy_Click(object sender, EventArgs e)
+        {
+            this.cmbMes.SelectedIndex = DateTime.Now.Month - 1;
+            this.cmbAño.SelectedItem = DateTime.Now.Year;
+        }
+
+        private void btnAsignacionesHermanoEspecifico_Click(object sender, EventArgs e)
+        {
+            frmHermanoEspecifico h = new frmHermanoEspecifico(this.escuela);
+            h.ShowDialog();
         }
     }
 }

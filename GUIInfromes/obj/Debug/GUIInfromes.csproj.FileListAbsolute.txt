@@ -1,0 +1,9 @@
+C:\Users\Lucas\Escritorio En SSD\AssigManager\GUIInfromes\bin\Debug\GUIInfromes.exe.config
+C:\Users\Lucas\Escritorio En SSD\AssigManager\GUIInfromes\bin\Debug\GUIInfromes.exe
+C:\Users\Lucas\Escritorio En SSD\AssigManager\GUIInfromes\bin\Debug\GUIInfromes.pdb
+C:\Users\Lucas\Escritorio En SSD\AssigManager\GUIInfromes\obj\Debug\GUIInfromes.csprojAssemblyReference.cache
+C:\Users\Lucas\Escritorio En SSD\AssigManager\GUIInfromes\obj\Debug\GUIInfromes.FormularioInformesPrincipal.resources
+C:\Users\Lucas\Escritorio En SSD\AssigManager\GUIInfromes\obj\Debug\GUIInfromes.Properties.Resources.resources
+C:\Users\Lucas\Escritorio En SSD\AssigManager\GUIInfromes\obj\Debug\GUIInfromes.csproj.GenerateResource.cache
+C:\Users\Lucas\Escritorio En SSD\AssigManager\GUIInfromes\obj\Debug\GUIInfromes.exe
+C:\Users\Lucas\Escritorio En SSD\AssigManager\GUIInfromes\obj\Debug\GUIInfromes.pdb

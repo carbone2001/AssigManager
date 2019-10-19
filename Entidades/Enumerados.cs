@@ -1,12 +1,4 @@
-﻿public enum EPrivilegio
-{
-    Anciano,
-    Siervo_Ministerial,
-    Precursor_Especial,
-    Precursor_Regular,
-    Precursor_Auxiliar,
-    Publicador,
-}
+﻿
 
 public enum EAsignacion
 {
