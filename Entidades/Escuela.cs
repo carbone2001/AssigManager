@@ -1,4 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.IO;
+using System.Xml;
+using System.Xml.Serialization;
 using Hermanos;
 namespace Entidades
 {
@@ -95,6 +98,10 @@ namespace Entidades
                 e.ListaAsignaciones.Remove(a);
             }
             return e;
+        }
+        public static bool GuardarEscuela(Escuela a,string path)
+        {
+            return false;
         }
 
 
