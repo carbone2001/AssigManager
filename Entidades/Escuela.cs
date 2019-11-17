@@ -2,9 +2,11 @@
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
+using System;
 using Hermanos;
 namespace Entidades
 {
+    [Serializable]
     public class Escuela
     {
         #region Atributos
@@ -29,7 +31,7 @@ namespace Entidades
             set { if (value.Length <= 30) { this.nombreCongregacion = value; } }
         }
         #endregion
-        #region Propiedades
+        #region Metodos
 
         ///Hermanos
         public static bool operator !=(Escuela e, Hermano h)
@@ -65,10 +67,14 @@ namespace Entidades
         ///Asignaciones
         public static int operator |(Escuela a, Asignacion b)
         {
+            int index = 0;
             foreach(Asignacion x in a.ListaAsignaciones)
             {
+                if (x == b)
+                    return index;
+                index++;
             }
-            return 0;
+            return -1;
         }
         public static bool operator !=(Escuela e, Asignacion a)
         {
@@ -99,23 +105,49 @@ namespace Entidades
             }
             return e;
         }
-        public static bool GuardarEscuela(Escuela a,string path)
-        {
-            return false;
-        }
-
-
-
         public Escuela()
         {
             this.listaAsignaciones = new List<Asignacion>();
             this.listaHermanos = new List<Hermano>();
             this.NombreCongregacion = "Nombre no definido";
-
         }
         public Escuela(string nombre) : this()
         {
             this.NombreCongregacion = nombre;
+        }
+
+        public static bool GuardarEscuela(string path,Escuela e)
+        {
+            try
+            {
+                TextWriter archivoAGuardar = new StreamWriter(path);
+                XmlSerializer ser = new XmlSerializer(typeof(Escuela));
+                ser.Serialize(archivoAGuardar, e);
+                archivoAGuardar.Close();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+           
+        }
+        public static bool LeerEscuela(string path,out Escuela e)
+        {
+            try
+            {
+                TextReader archivoAAbrir = new StreamReader(path);
+                XmlSerializer ser = new XmlSerializer(typeof(Escuela));
+                e =(Escuela)ser.Deserialize(archivoAAbrir);
+                archivoAAbrir.Close();
+                return true;
+            }
+            catch (Exception)
+            {
+                e = null;
+                return false;
+            }
+
         }
 
         #endregion

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6612C07B-52D6-4BBC-87C1-BA6573538006}</ProjectGuid>
+    <ProjectGuid>{12DC748F-CAB3-4772-8CBF-D78DB45C77B5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>GUIAssigManager</RootNamespace>
-    <AssemblyName>GUIAssigManager</AssemblyName>
+    <RootNamespace>GUIPrincipal</RootNamespace>
+    <AssemblyName>GUIPrincipal</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,10 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,53 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormularioPrincipal.cs">
+    <Compile Include="FormInicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormularioPrincipal.Designer.cs">
-      <DependentUpon>FormularioPrincipal.cs</DependentUpon>
+    <Compile Include="FormInicio.Designer.cs">
+      <DependentUpon>FormInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAsignacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAsignacion.Designer.cs">
-      <DependentUpon>FrmAsignacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmEscuela.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmEscuela.Designer.cs">
-      <DependentUpon>FrmEscuela.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmHermano.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmHermano.Designer.cs">
-      <DependentUpon>FrmHermano.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmHermanoEspecifico.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHermanoEspecifico.Designer.cs">
-      <DependentUpon>frmHermanoEspecifico.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Ordenadmiento.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormularioPrincipal.resx">
-      <DependentUpon>FormularioPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmAsignacion.resx">
-      <DependentUpon>FrmAsignacion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmEscuela.resx">
-      <DependentUpon>FrmEscuela.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmHermano.resx">
-      <DependentUpon>FrmHermano.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmHermanoEspecifico.resx">
-      <DependentUpon>frmHermanoEspecifico.cs</DependentUpon>
+    <EmbeddedResource Include="FormInicio.resx">
+      <DependentUpon>FormInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -107,7 +66,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -120,19 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EntidadesHermanos\EntidadesHermanos.csproj">
-      <Project>{30f99fca-4df7-42e5-a8c5-e7ce7266549c}</Project>
-      <Name>EntidadesHermanos</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Entidades\EntidadesAsignaciones.csproj">
-      <Project>{e511990a-9b69-40e5-af72-6a4c0aada5e6}</Project>
-      <Name>EntidadesAsignaciones</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

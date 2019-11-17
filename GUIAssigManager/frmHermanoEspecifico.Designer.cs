@@ -38,10 +38,11 @@
             // 
             // cmbListaDeHermanos
             // 
+            this.cmbListaDeHermanos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbListaDeHermanos.FormattingEnabled = true;
             this.cmbListaDeHermanos.Location = new System.Drawing.Point(12, 38);
             this.cmbListaDeHermanos.Name = "cmbListaDeHermanos";
-            this.cmbListaDeHermanos.Size = new System.Drawing.Size(491, 21);
+            this.cmbListaDeHermanos.Size = new System.Drawing.Size(532, 21);
             this.cmbListaDeHermanos.TabIndex = 0;
             this.cmbListaDeHermanos.SelectedIndexChanged += new System.EventHandler(this.cmbListaDeHermanos_SelectedIndexChanged);
             // 
@@ -60,7 +61,7 @@
             this.lsbListaAsignacionesDelHermano.HorizontalScrollbar = true;
             this.lsbListaAsignacionesDelHermano.Location = new System.Drawing.Point(12, 78);
             this.lsbListaAsignacionesDelHermano.Name = "lsbListaAsignacionesDelHermano";
-            this.lsbListaAsignacionesDelHermano.Size = new System.Drawing.Size(491, 147);
+            this.lsbListaAsignacionesDelHermano.Size = new System.Drawing.Size(532, 147);
             this.lsbListaAsignacionesDelHermano.TabIndex = 2;
             // 
             // label2
@@ -84,7 +85,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(385, 231);
+            this.btnSalir.Location = new System.Drawing.Point(426, 231);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(118, 38);
             this.btnSalir.TabIndex = 5;
@@ -96,7 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 279);
+            this.ClientSize = new System.Drawing.Size(556, 279);
             this.ControlBox = false;
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.cmbOrdenamientos);

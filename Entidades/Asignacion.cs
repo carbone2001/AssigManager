@@ -3,6 +3,7 @@ using System.Text;
 using Hermanos;
 namespace Entidades
 {
+    [Serializable]
     public class Asignacion
     {
         #region Atributos
@@ -15,11 +16,11 @@ namespace Entidades
         private char escuela;
         #endregion
         #region Propiedades
-        public Hermano Hermano { get { return this.hermano; } }
-        public Hermano Ayudante { get { return this.ayudante; } }
-        public int AspectoOratoria { get { return this.aspectoOratoria; } }
-        public EAsignacion Asignacion_ { get { return this.asignacion; } }
-        public DateTime Semana { get { return this.semana; } }
+        public Hermano Hermano { get { return this.hermano; } set { this.hermano = value; } }
+        public Hermano Ayudante { get { return this.ayudante; } set { this.ayudante = value; } }
+        public int AspectoOratoria { get { return this.aspectoOratoria; } set { this.aspectoOratoria = value; } }
+        public EAsignacion Asignacion_ { get { return this.asignacion; } set { this.asignacion = value; } }
+        public DateTime Semana { get { return this.semana; } set { this.semana = value; } }
         public char Escuela { get { return this.escuela; } set { if (Char.ToUpper(value) == 'A' || Char.ToUpper(value) == 'B') { this.escuela = Char.ToUpper(value); } } }
         public bool Rechazada { get { return this.rechazada; } set { this.rechazada = value; } }
         #endregion
@@ -33,9 +34,9 @@ namespace Entidades
             }
             else
             {
-                ayudante = String.Format("{0} - {1}",this.Ayudante.Apellido, this.Ayudante.Nombre);
+                ayudante = String.Format("{0} - {1}", this.Ayudante.Apellido, this.Ayudante.Nombre);
             }
-            return String.Format("{0} - {1}  | Ayudante: {2} | {3} | Aspecto: {4} | Escuela: {5} | Semana: {6} | Rechazada: {7}", hermano.Apellido, hermano.Nombre,ayudante,this.MostrarAsignacion(),this.AspectoOratoria,this.Escuela, this.MostrarSemana(), this.MostrarRechazo());
+            return String.Format("{0} - {1}  | Ayudante: {2} | {3} | Aspecto: {4} | Escuela: {5} | Semana: {6} | Rechazada: {7}", hermano.Apellido, hermano.Nombre, ayudante, this.MostrarAsignacion(), this.AspectoOratoria, this.Escuela, this.MostrarSemana(), this.MostrarRechazo());
 
         }
         private string MostrarSemana()
@@ -70,7 +71,8 @@ namespace Entidades
                     return "Asignacion No Definida";
             }
         }
-        public Asignacion(Hermano hermano, Hermano ayudante, EAsignacion asignacion, int aspectoOratoria, DateTime semana, char escuela)
+        public Asignacion() {}
+        public Asignacion(Hermano hermano, Hermano ayudante, EAsignacion asignacion, int aspectoOratoria, DateTime semana, char escuela):this()
         {
             this.Escuela = escuela;
             this.ayudante = ayudante;

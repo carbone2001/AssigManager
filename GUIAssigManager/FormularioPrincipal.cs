@@ -3,6 +3,8 @@ using System.IO;
 using System.Windows.Forms;
 using Entidades;
 using Hermanos;
+using System.Xml.Serialization;
+
 namespace GUIAssigManager
 {
     public partial class FormularioPrincipal : Form
@@ -15,13 +17,12 @@ namespace GUIAssigManager
             escuela = new Escuela();
             this.grbAsignacion.Enabled = false;
             this.grbHermanos.Enabled = false;
-            this.Text = "AssigManager (Congregacion No Definida)";
+            this.Text = escuela.NombreCongregacion;
             this.hermanientasToolStripMenuItem.Enabled = false;
             foreach (ETipoOrdenamiento p in ETipoOrdenamiento.GetValues(typeof(ETipoOrdenamiento)))
             {
                 this.cmbOrdenamientoHermanos.Items.Add(p);
             }
-
             this.cmbOrdenamientoHermanos.SelectedIndex = 0;
             foreach (ETipoOrdenamientoAsignacion p in ETipoOrdenamientoAsignacion.GetValues(typeof(ETipoOrdenamientoAsignacion)))
             {
@@ -48,7 +49,7 @@ namespace GUIAssigManager
                 this.Text = String.Format("AssigManager ({0})", this.escuela.NombreCongregacion);
                 this.grbAsignacion.Enabled = true;
                 this.grbHermanos.Enabled = true;
-                this.escuelaToolStripMenuItem.Enabled = false;
+                this.escuelaToolStripMenuItem.Enabled = true;
                 this.hermanientasToolStripMenuItem.Enabled = true;
             }
         }
@@ -246,13 +247,21 @@ namespace GUIAssigManager
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog fb = new OpenFileDialog();
-
             DialogResult result = fb.ShowDialog();
             if (result == DialogResult.OK)
             {
                 try
                 {
-                    MessageBox.Show("FUNCION EN ESTADO DE PRUBA!", "FUNCION EN ESTADO DE PRUBA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (Escuela.LeerEscuela(fb.FileName,out this.escuela) == false)
+                        MessageBox.Show("No se ha podido abrir el archivo!");
+                    else
+                    {
+                        this.grbAsignacion.Enabled = true;
+                        this.grbHermanos.Enabled = true;
+                        this.escuelaToolStripMenuItem.Enabled = false;
+                        this.hermanientasToolStripMenuItem.Enabled = true;
+                    }
+                    ActualizarListBox();
                 }
                 catch (Exception c)
                 {
@@ -263,26 +272,11 @@ namespace GUIAssigManager
 
         private void guardarComoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog fb = new FolderBrowserDialog();
-            DialogResult result = fb.ShowDialog();
+            SaveFileDialog saveFile = new SaveFileDialog();
+            DialogResult result = saveFile.ShowDialog();
             if (result == DialogResult.OK)
-            {
-                try
-                {
-                    using (StreamWriter archivoAGuardar = new StreamWriter(fb.SelectedPath + "\\DATA_ASSIGMANAGER.txt"))
-                    {
-                        foreach (Asignacion x in this.escuela.ListaAsignaciones)
-                        {
-                            archivoAGuardar.WriteLine(x.ToString());
-                        }
-                        MessageBox.Show("El archivo se ha guardado con exito!", "Archivo Guardado", MessageBoxButtons.OK);
-                    }
-                }
-                catch (Exception c)
-                {
-                    MessageBox.Show(c.Message);
-                }
-            }
+                if(Escuela.GuardarEscuela(saveFile.FileName, this.escuela)==false)
+                    MessageBox.Show("No se ha podido guardar el archivo!");
         }
 
         private void btnVolverAHoy_Click(object sender, EventArgs e)
@@ -295,6 +289,11 @@ namespace GUIAssigManager
         {
             frmHermanoEspecifico h = new frmHermanoEspecifico(this.escuela);
             h.ShowDialog();
+        }
+
+        private void guardarComoExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Coming soon!");
         }
     }
 }

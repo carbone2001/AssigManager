@@ -2,6 +2,7 @@
 
 namespace Hermanos
 {
+    [Serializable]
     public class Hermano
     {
         #region Atributos

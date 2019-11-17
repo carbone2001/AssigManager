@@ -33,13 +33,11 @@
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.escuelaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarComoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hermanientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarNombreDeCongregacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grbAsignacion = new System.Windows.Forms.GroupBox();
+            this.btnAsignacionesHermanoEspecifico = new System.Windows.Forms.Button();
             this.btnVolverAHoy = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,7 +57,7 @@
             this.btnBuscarHermano = new System.Windows.Forms.Button();
             this.btnEditarInfoHermano = new System.Windows.Forms.Button();
             this.btnAgregarHermano = new System.Windows.Forms.Button();
-            this.btnAsignacionesHermanoEspecifico = new System.Windows.Forms.Button();
+            this.guardarComoExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.grbAsignacion.SuspendLayout();
             this.grbHermanos.SuspendLayout();
@@ -69,9 +67,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
-            this.verToolStripMenuItem,
-            this.hermanientasToolStripMenuItem,
-            this.ayudaToolStripMenuItem});
+            this.hermanientasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(896, 24);
@@ -83,8 +79,8 @@
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoToolStripMenuItem,
             this.abrirToolStripMenuItem,
-            this.guardarToolStripMenuItem,
-            this.guardarComoToolStripMenuItem});
+            this.guardarComoToolStripMenuItem,
+            this.guardarComoExcelToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
@@ -94,49 +90,37 @@
             this.nuevoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.escuelaToolStripMenuItem});
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             // 
             // escuelaToolStripMenuItem
             // 
             this.escuelaToolStripMenuItem.Name = "escuelaToolStripMenuItem";
-            this.escuelaToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.escuelaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.escuelaToolStripMenuItem.Text = "Escuela";
             this.escuelaToolStripMenuItem.Click += new System.EventHandler(this.escuelaToolStripMenuItem_Click);
             // 
             // abrirToolStripMenuItem
             // 
             this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.abrirToolStripMenuItem.Text = "Abrir";
             this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
-            // 
-            // guardarToolStripMenuItem
-            // 
-            this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.guardarToolStripMenuItem.Text = "Guardar";
             // 
             // guardarComoToolStripMenuItem
             // 
             this.guardarComoToolStripMenuItem.Name = "guardarComoToolStripMenuItem";
-            this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.guardarComoToolStripMenuItem.Text = "Guardar Como";
+            this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.guardarComoToolStripMenuItem.Text = "Guardar";
             this.guardarComoToolStripMenuItem.Click += new System.EventHandler(this.guardarComoToolStripMenuItem_Click);
-            // 
-            // verToolStripMenuItem
-            // 
-            this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
-            this.verToolStripMenuItem.Text = "Ver";
             // 
             // hermanientasToolStripMenuItem
             // 
             this.hermanientasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cambiarNombreDeCongregacionToolStripMenuItem});
             this.hermanientasToolStripMenuItem.Name = "hermanientasToolStripMenuItem";
-            this.hermanientasToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
-            this.hermanientasToolStripMenuItem.Text = "Herramientas";
+            this.hermanientasToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.hermanientasToolStripMenuItem.Text = "Ajustes";
             // 
             // cambiarNombreDeCongregacionToolStripMenuItem
             // 
@@ -144,12 +128,6 @@
             this.cambiarNombreDeCongregacionToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
             this.cambiarNombreDeCongregacionToolStripMenuItem.Text = "Cambiar Nombre de Congregacion";
             this.cambiarNombreDeCongregacionToolStripMenuItem.Click += new System.EventHandler(this.cambiarNombreDeCongregacionToolStripMenuItem_Click);
-            // 
-            // ayudaToolStripMenuItem
-            // 
-            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // grbAsignacion
             // 
@@ -172,6 +150,16 @@
             this.grbAsignacion.TabIndex = 1;
             this.grbAsignacion.TabStop = false;
             this.grbAsignacion.Text = "Asignacion";
+            // 
+            // btnAsignacionesHermanoEspecifico
+            // 
+            this.btnAsignacionesHermanoEspecifico.Location = new System.Drawing.Point(6, 175);
+            this.btnAsignacionesHermanoEspecifico.Name = "btnAsignacionesHermanoEspecifico";
+            this.btnAsignacionesHermanoEspecifico.Size = new System.Drawing.Size(123, 46);
+            this.btnAsignacionesHermanoEspecifico.TabIndex = 12;
+            this.btnAsignacionesHermanoEspecifico.Text = "Asignaciones de Hermano Especifico";
+            this.btnAsignacionesHermanoEspecifico.UseVisualStyleBackColor = true;
+            this.btnAsignacionesHermanoEspecifico.Click += new System.EventHandler(this.btnAsignacionesHermanoEspecifico_Click);
             // 
             // btnVolverAHoy
             // 
@@ -363,15 +351,12 @@
             this.btnAgregarHermano.UseVisualStyleBackColor = true;
             this.btnAgregarHermano.Click += new System.EventHandler(this.btnAgregarHermano_Click);
             // 
-            // btnAsignacionesHermanoEspecifico
+            // guardarComoExcelToolStripMenuItem
             // 
-            this.btnAsignacionesHermanoEspecifico.Location = new System.Drawing.Point(6, 175);
-            this.btnAsignacionesHermanoEspecifico.Name = "btnAsignacionesHermanoEspecifico";
-            this.btnAsignacionesHermanoEspecifico.Size = new System.Drawing.Size(123, 46);
-            this.btnAsignacionesHermanoEspecifico.TabIndex = 12;
-            this.btnAsignacionesHermanoEspecifico.Text = "Asignaciones de Hermano Especifico";
-            this.btnAsignacionesHermanoEspecifico.UseVisualStyleBackColor = true;
-            this.btnAsignacionesHermanoEspecifico.Click += new System.EventHandler(this.btnAsignacionesHermanoEspecifico_Click);
+            this.guardarComoExcelToolStripMenuItem.Name = "guardarComoExcelToolStripMenuItem";
+            this.guardarComoExcelToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.guardarComoExcelToolStripMenuItem.Text = "Guardar Como Excel";
+            this.guardarComoExcelToolStripMenuItem.Click += new System.EventHandler(this.guardarComoExcelToolStripMenuItem_Click);
             // 
             // FormularioPrincipal
             // 
@@ -398,9 +383,7 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hermanientasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem escuelaToolStripMenuItem;
         private System.Windows.Forms.GroupBox grbAsignacion;
@@ -424,10 +407,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem cambiarNombreDeCongregacionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem guardarComoToolStripMenuItem;
         private System.Windows.Forms.Button btnVolverAHoy;
         private System.Windows.Forms.Button btnAsignacionesHermanoEspecifico;
+        private System.Windows.Forms.ToolStripMenuItem guardarComoExcelToolStripMenuItem;
     }
 }
 
